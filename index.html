@@ -3,42 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SVIS AI Hackathon 2025</title>
+<title>Event Information</title>
 <style>
     body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #fff;
-        color: #000;
+        background-color: #ffffff;
+        color: #000000;
     }
 
     header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 15px;
         text-align: center;
-        padding: 20px 10px;
-        background-color: #f4f4f4;
     }
 
-    header h1 {
-        font-size: 2.2em;
-        color: orange;
-        margin-bottom: 10px;
+    .container {
+        padding: 20px;
     }
 
+    /* Event info box - responsive fix */
     .event-info {
-        text-align: center;
-        font-size: 1em;
-        line-height: 1.5;
+        position: relative;
+        padding: 20px;
+        font-weight: 700;
+        color: #2d862d;
+        font-size: 20px;
+        text-align: left;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: #f9f9f9;
+        border-radius: 10px;
         margin-bottom: 20px;
     }
 
-    /* Responsive styling for mobile */
+    .event-line {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .event-time p {
+        margin: 0;
+    }
+
+    /* Tools section */
+    .tools {
+        margin-top: 30px;
+    }
+
+    .tools h2 {
+        background-color: yellow;
+        padding: 10px;
+        border-radius: 5px;
+        display: inline-block;
+    }
+
+    /* Make sure everything scales on phones */
     @media (max-width: 600px) {
-        header h1 {
-            font-size: 1.8em;
-        }
         .event-info {
-            font-size: 0.95em;
+            font-size: 18px;
+        }
+        .tools h2 {
+            font-size: 20px;
         }
     }
 </style>
@@ -46,23 +75,29 @@
 <body>
 
 <header>
-    <h1>SVIS AI Hackathon 2025</h1>
-    <div class="event-info">
-        <p><strong>Date:</strong> 15th September 2025</p>
-        <p><strong>Slot Timings:</strong> 9:00 AM - 4:00 PM</p>
-        <p><strong>Venue:</strong> SVIS Auditorium</p>
-    </div>
+    <h1>Event Day</h1>
 </header>
 
-<main style="padding: 20px;">
-    <h2>🛠️ Tools</h2>
-    <ul>
-        <li>Python</li>
-        <li>TensorFlow</li>
-        <li>OpenAI API</li>
-        <li>HTML, CSS, JavaScript</li>
-    </ul>
-</main>
+<div class="container">
+
+    <div class="event-info">
+        <div class="event-line">
+            <div class="event-time"><p>Slot 1: 10:00 AM - 11:00 AM</p></div>
+            <div class="event-time"><p>Slot 2: 11:15 AM - 12:15 PM</p></div>
+        </div>
+        <p><strong>Note:</strong> NO DEVICES – Devices will be provided by the school.</p>
+    </div>
+
+    <section class="tools">
+        <h2>🛠️ Tools</h2>
+        <ul>
+            <li>Tool 1</li>
+            <li>Tool 2</li>
+            <li>Tool 3</li>
+        </ul>
+    </section>
+
+</div>
 
 </body>
 </html>
