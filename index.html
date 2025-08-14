@@ -26,6 +26,36 @@
       z-index: -1;
     }
 
+    .content {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 60px;
+      font-weight: 800;
+      background: linear-gradient(90deg, #f7b733, #fc4a1a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+      animation: popIn 1s ease-out;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      60% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    .subtitle {
+      font-size: 20px;
+      color: #333333;
+      margin-bottom: 30px;
+    }
+
     .event-info {
       position: relative;
       margin-top: 20px;
@@ -55,30 +85,6 @@
     .event-venue {
       margin-top: 10px;
       font-size: 20px;
-    }
-
-    .content {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 60px;
-      font-weight: 800;
-      background: linear-gradient(90deg, #f7b733, #fc4a1a);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 30px;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-      animation: popIn 1s ease-out;
-    }
-
-    @keyframes popIn {
-      0% { transform: scale(0.8); opacity: 0; }
-      60% { transform: scale(1.1); opacity: 1; }
-      100% { transform: scale(1); }
     }
 
     h2 {
@@ -173,6 +179,14 @@
 <body>
   <div id="particles-js"></div>
   <div class="content">
+    <!-- Heading First -->
+    <h1>🚀 SVIS AI Hackathon 2025</h1>
+    <p class="subtitle">
+      Let your imagination run wild and use AI to solve practical issues!<br>
+      Collaborate in groups to develop, construct, and showcase creative solutions; no prior coding knowledge required.
+    </p>
+
+    <!-- Event Info -->
     <div class="event-info">
       <div class="event-line">
         <p class="event-date">📅 Date: 19th August 2025</p>
@@ -184,12 +198,7 @@
       <p class="event-venue">📍 Venue: Senior Computer Lab</p>
     </div>
 
-    <h1>🚀 SVIS AI Hackathon 2025</h1>
-    <p class="subtitle">
-      Let your imagination run wild and use AI to solve practical issues!<br>
-      Collaborate in groups to develop, construct, and showcase creative solutions; no prior coding knowledge required.
-    </p>
-
+    <!-- Requirements -->
     <section>
       <h2>📝 Requirements</h2>
       <ul>
@@ -199,6 +208,7 @@
       </ul>
     </section>
 
+    <!-- Tools -->
     <section>
       <h2>🛠️ Tools</h2>
       <ul>
@@ -210,6 +220,7 @@
       </ul>
     </section>
 
+    <!-- Participation Fees -->
     <section>
       <div style="margin-top: 20px; text-align: center;">
         <p style="font-size: 20px; font-weight: bold; color: red; background: #ffeaea; padding: 10px; border-radius: 8px; display: inline-block;">
@@ -220,13 +231,10 @@
       <p>Absolutely <b>FREE</b> — just bring your ideas!</p>
     </section>
 
+    <!-- Register Button -->
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2BPhZ1uZ7ElAjT0w7PyJOaJwSUUN-v-zO_AYEO9-hP5iQ3g/viewform?usp=dialog" target="_blank" class="btn">Register Now</a>
   </div>
 
+  <!-- Footer -->
   <footer>
-    <h2>📧 Contact Us</h2>
-    <p>For more information, reach out at:</p>
-    <ul>
-      <li><a href="mailto:svisaihackathon2025@gmail.com">svisaihackathon2025@gmail.com</a></li>
-    </ul>
- 
+    <h2>📧 Contact Us</h2
