@@ -56,35 +56,26 @@
       margin-bottom: 30px;
     }
 
-    .event-info {
-      position: relative;
+    /* Z-pattern event info */
+    .event-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
       margin-top: 20px;
-      padding: 0 20px;
       font-weight: 700;
       color: #2d862d;
       font-size: 20px;
-      text-align: left;
-      box-sizing: border-box;
     }
 
-    .event-line {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
+    .event-item {
+      background: rgba(255, 255, 255, 0.6);
+      padding: 10px;
+      border-radius: 8px;
     }
 
-    .event-date, .event-time p {
-      margin: 0;
-    }
-
-    .event-time {
-      padding-right: 50px;
-    }
-
-    .event-venue {
-      margin-top: 10px;
-      font-size: 20px;
+    /* Center only Slot 1 and Slot 2 text */
+    .event-item.slot {
+      text-align: center;
     }
 
     h2 {
@@ -164,15 +155,15 @@
     @media (max-width: 768px) {
       h1 { font-size: 48px; }
       .btn { padding: 20px 50px; font-size: 22px; }
-      .event-info { font-size: 18px; }
-      .event-line { flex-direction: column; align-items: flex-start; }
-      .event-time { margin-top: 5px; padding-right: 0; }
+      .event-info-grid { font-size: 18px; grid-template-columns: 1fr; text-align: left; }
+      .event-item:nth-child(2),
+      .event-item:nth-child(4) { text-align: center; } /* keep slot centering on mobile */
     }
 
     @media (max-width: 480px) {
       h1 { font-size: 36px; }
       .btn { padding: 16px 40px; font-size: 18px; }
-      .event-info { font-size: 16px; }
+      .event-info-grid { font-size: 16px; }
     }
   </style>
 </head>
@@ -186,16 +177,12 @@
       Collaborate in groups to develop, construct, and showcase creative solutions; no prior coding knowledge required.
     </p>
 
-    <!-- Event Info -->
-    <div class="event-info">
-      <div class="event-line">
-        <p class="event-date">📅 Date: 19th August 2025</p>
-        <div class="event-time">
-          <p>🕒 Slot 1 (8th Grade): 8:00 - 10:30</p>
-          <p>🕒 Slot 2 (9th Grade): 10:50 - 1:20</p>
-        </div>
-      </div>
-      <p class="event-venue">📍 Venue: Senior Computer Lab</p>
+    <!-- Event Info in Z Pattern -->
+    <div class="event-info-grid">
+      <div class="event-item">📅 Date: 19th August 2025</div>
+      <div class="event-item slot">🕒 Slot 1 (8th Grade): 8:00 - 10:30</div>
+      <div class="event-item">📍 Venue: Senior Computer Lab</div>
+      <div class="event-item slot">🕒 Slot 2 (9th Grade): 10:50 - 1:20</div>
     </div>
 
     <!-- Requirements -->
@@ -210,7 +197,7 @@
 
     <!-- Tools -->
     <section>
-      <h2>🛠️ Tools</h2>
+      <h2>🛠 Tools</h2>
       <ul>
         <li><strong>GitHub</strong> — store, share, and collaborate on code</li>
         <li><strong>Cursor</strong> — AI-powered code editor</li>
@@ -265,4 +252,3 @@
   </script>
 </body>
 </html>
-   
