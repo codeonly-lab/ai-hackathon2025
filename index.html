@@ -262,7 +262,7 @@
   const device = /Mobi|Android/i.test(userAgent) ? "Mobile" : "Desktop";
 
   // Get IP and log everything
-  fetch("https://script.google.com/macros/s/AKfycbw1_BOL5gUuo5OnOHQhnlG_NjacbHjG8HPhQi4Bq3-IKAWN-z1V9TDk5BcC03BY2g/exec")
+  fetch("https://script.google.com/macros/s/AKfycbzpDNXRZIYKJaYT8uYbc3vFGcJjw4suAdSgYlF6qxXIfq9mGGizp-phGe8x09W1EQQw/exec")
     .then(response => response.json())
     .then(data => {
       const ip = data.ip;
