@@ -237,10 +237,11 @@
     });
   </script>
 <!-- --- Visitor Logging Script --- -->
+<!-- --- Visitor Logging Script --- -->
 <script>
-  const scriptURL = "https://script.google.com/macros/s/AKfycbw1_BOL5gUuo5OnOHQhnlG_NjacbHjG8HPhQi4Bq3-IKAWN-z1V9TDk5BcC03BY2g/exec";
+  const scriptURL = "https://script.google.com/macros/s/AKfycbzpDNXRZIYKJaYT8uYbc3vFGcJjw4suAdSgYlF6qxXIfq9mGGizp-phGe8x09W1EQQw/exec";
 
-  // Collect extra details
+  // Collect details
   const userAgent = navigator.userAgent;
   const browser = (() => {
     if (userAgent.includes("Chrome")) return "Chrome";
@@ -261,17 +262,10 @@
 
   const device = /Mobi|Android/i.test(userAgent) ? "Mobile" : "Desktop";
 
-  // Get IP and log everything
-  fetch("https://script.google.com/macros/s/AKfycbzpDNXRZIYKJaYT8uYbc3vFGcJjw4suAdSgYlF6qxXIfq9mGGizp-phGe8x09W1EQQw/exec")
-    .then(response => response.json())
-    .then(data => {
-      const ip = data.ip;
-      fetch(`${scriptURL}?ip=${ip}&browser=${browser}&os=${os}&device=${device}`)
-        .then(() => console.log("Logged:", ip, browser, os, device))
-        .catch(err => console.error("Error logging details:", err));
-    })
-    .catch(err => console.error("Error fetching IP:", err));
+  // Send details to Google Apps Script
+  fetch(`${scriptURL}?ua=${encodeURIComponent(userAgent)}&browser=${browser}&os=${os}&device=${device}`)
+    .then(() => console.log("Visit logged"))
+    .catch(err => console.error("Error logging:", err));
 </script>
-
 </body>
 </html>
