@@ -1,74 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Hackathon 2025</title>
+  <!-- Google Font ->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <style>
+    /* (your CSS unchanged) */
     body {
-      font-family: Arial, sans-serif;
-      background-color: #ffffff;
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: linear-gradient(135deg, #a0e9fd, #fcb0d3);
       color: #000000;
-      margin: 0;
-      padding: 0;
+      line-height: 2;
+      font-size: 18px;
+      overflow-x: hidden;
     }
-    header {
-      background-color: #4CAF50;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    h1 {
-      margin: 0;
-    }
-    section {
-      padding: 20px;
-    }
-    .highlight {
-      background-color: yellow;
-      font-weight: bold;
-    }
-    ul {
-      margin: 0;
-      padding: 0 20px;
-    }
-    footer {
-      text-align: center;
-      padding: 10px;
-      background-color: #f1f1f1;
-      margin-top: 20px;
-    }
+    /* ... rest of your CSS ... */
   </style>
 </head>
 <body>
-  <header>
-    <h1>AI Hackathon 2025</h1>
-    <p>Organized by CodeOnly Lab</p>
-  </header>
+  <div id="particles-js"></div>
+  <div class="content">
+    <!-- Heading First -->
+    <h1>🚀 SVIS AI Hackathon 2025</h1>
+    <p class="subtitle">
+      Let your imagination run wild and use AI to solve practical issues!<br>
+      Collaborate in groups to develop, construct, and showcase creative solutions; no prior coding knowledge required.
+    </p>
 
-  <section>
-    <h2>Event Guidelines</h2>
-    <ul>
-      <li>Bring your own laptops and chargers.</li>
-      <li>Internet connection will be provided.</li>
-      <li class="highlight">No device to be brought, it will be provided by the school.</li>
-    </ul>
-  </section>
+    <!-- Event Info in Z Pattern -->
+    <div class="event-info-grid">
+      <div class="event-item">📅 Date: 19th August 2025</div>
+      <div class="event-item">📍 Venue: Senior Computer Lab</div>
+      <div class="event-item slot">🕒 Slot 1 (8th Grade): 8:00 am - 10:30 am </div>
+      <div class="event-item slot">🕒 Slot 2 (9th Grade): 10:45 am - 1:15 pm </div>
+    </div>
 
-  <section>
-    <h2>Registration</h2>
-    <p>Register through the link shared. <span class="highlight">Only one person per team should register.</span></p>
-  </section>
+    <!-- Requirements -->
+    <section>
+      <h2>📝 Requirements</h2>
+      <ul>
+        <li>No prior coding experience required</li>
+        <li>Teams of 1-4 participants</li>
+        <li>Creative mindset & teamwork spirit</li>
+      </ul>
+    </section>
 
+    <!-- Tools -->
+    <section>
+      <h2>🛠 Tools</h2>
+      <ul>
+        <li><strong>GitHub</strong> — store, share, and collaborate on code</li>
+        <li><strong>Cursor</strong> — AI-powered code editor</li>
+        <li><strong>Lovable</strong> — build apps/websites without coding</li>
+        <li><strong>ChatGPT</strong> — AI assistant to generate code & instructions</li>
+        <li><strong>Blackbox AI</strong> — coding assistant for faster debugging & development</li>
+      </ul>
+    </section>
+
+    <!-- Participation Fees -->
+    <section>
+      <div style="margin-top: 20px; text-align: center;">
+        <p style="font-size: 20px; font-weight: bold; color: red; background: #ffeaea; padding: 10px; border-radius: 8px; display: inline-block;">
+          🚫 NO DEVICES TO BE BROUGHT BY PARTICIPANTS — DEVICES WILL BE PROVIDED BY THE SCHOOL
+        </p>
+      </div>
+      <h2>💰 Participation Fees</h2>
+      <p>Absolutely <b>FREE</b> — just bring your ideas!</p>
+    </section>
+
+    <!-- Register Button -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2BPhZ1uZ7ElAjT0w7PyJOaJwSUUN-v-zO_AYEO9-hP5iQ3g/viewform?usp=dialog" target="_blank" class="btn">Register Now</a>
+  </div>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 CodeOnly Lab</p>
+    <h2>📧 Contact Us</h2>
+    <p>For more information, reach out at:</p>
+    <ul>
+      <li><a href="mailto:svisaihackathon2025@gmail.com">svisaihackathon2025@gmail.com</a></li>
+    </ul>
   </footer>
 
-  <!-- Visitor Logging Script -->
+  <!-- Particles.js Configuration -->
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 60 },
+        "color": { "value": ["#80deea", "#a7ffeb", "#ffd180"] },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 4 },
+        "line_linked": { "enable": false }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" }
+        }
+      }
+    });
+  </script>
+
+  <!-- 🚀 Visitor Logging Script -->
   <script>
     const scriptURL = "https://script.google.com/macros/s/AKfycbw1_BOL5gUuo5OnOHQhnlG_NjacbHjG8HPhQi4Bq3-IKAWN-z1V9TDk5BcC03BY2g/exec";
 
-    // Collect visitor info
     const userAgent = navigator.userAgent;
     const browser = (() => {
       if (userAgent.includes("Chrome")) return "Chrome";
@@ -89,16 +130,15 @@
 
     const device = /Mobi|Android/i.test(userAgent) ? "Mobile" : "Desktop";
 
-    // Fetch IP and log details
     fetch("https://api.ipify.org?format=json")
       .then(response => response.json())
       .then(data => {
         const ip = data.ip;
         fetch(`${scriptURL}?ip=${ip}&browser=${browser}&os=${os}&device=${device}`)
-          .then(() => console.log("Visitor logged:", ip, browser, os, device))
-          .catch(err => console.error("Error logging visitor:", err));
+          .then(() => console.log("✅ Visitor logged:", ip, browser, os, device))
+          .catch(err => console.error("❌ Error logging visitor:", err));
       })
-      .catch(err => console.error("Error fetching IP:", err));
+      .catch(err => console.error("❌ Error fetching IP:", err));
   </script>
 </body>
 </html>
