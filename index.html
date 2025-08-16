@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Hackathon 2025</title>
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Particles.js -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <style>
     body {
@@ -54,23 +56,26 @@
       margin-bottom: 30px;
     }
 
+    /* Z-pattern event info */
     .event-info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 15px;
-      margin: 30px auto;
-      max-width: 600px;
+      margin-top: 20px;
+      font-weight: 700;
+      color: #2d862d;
+      font-size: 20px;
     }
 
     .event-item {
-      text-align: center;
       background: rgba(255, 255, 255, 0.6);
-      padding: 16px;
-      border-radius: 10px;
-      font-size: 20px;
-      font-weight: 700;
-      color: #2d862d;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    /* Center only Slot 1 and Slot 2 text */
+    .event-item.slot {
+      text-align: center;
     }
 
     h2 {
@@ -150,7 +155,9 @@
     @media (max-width: 768px) {
       h1 { font-size: 48px; }
       .btn { padding: 20px 50px; font-size: 22px; }
-      .event-info-grid { font-size: 18px; grid-template-columns: 1fr; }
+      .event-info-grid { font-size: 18px; grid-template-columns: 1fr; text-align: left; }
+      .event-item:nth-child(2),
+      .event-item:nth-child(4) { text-align: center; } /* keep slot centering on mobile */
     }
 
     @media (max-width: 480px) {
@@ -163,20 +170,22 @@
 <body>
   <div id="particles-js"></div>
   <div class="content">
+    <!-- Heading First -->
     <h1>🚀 SVIS AI Hackathon 2025</h1>
     <p class="subtitle">
       Let your imagination run wild and use AI to solve practical issues!<br>
       Collaborate in groups to develop, construct, and showcase creative solutions; no prior coding knowledge required.
     </p>
 
-    <!-- Centered Event Info -->
+    <!-- Event Info in Z Pattern -->
     <div class="event-info-grid">
-      <div class="event-item">📅 Date: 20th August 2025</div>
+      <div class="event-item">📅 Date: 19th August 2025</div>
       <div class="event-item">📍 Venue: Senior Computer Lab</div>
-      <div class="event-item">🕒 Slot 1 (8th Grade): 8:00 am - 10:30 am</div>
-      <div class="event-item">🕒 Slot 2 (9th Grade): 10:45 am - 1:15 pm</div>
+      <div class="event-item slot">🕒 Slot 1 (8th Grade): 8:00 am - 10:30 am </div>
+      <div class="event-item slot">🕒 Slot 2 (9th Grade): 10:45 am - 1:15 pm </div>
     </div>
 
+    <!-- Requirements -->
     <section>
       <h2>📝 Requirements</h2>
       <ul>
@@ -186,6 +195,7 @@
       </ul>
     </section>
 
+    <!-- Tools -->
     <section>
       <h2>🛠 Tools</h2>
       <ul>
@@ -197,6 +207,7 @@
       </ul>
     </section>
 
+    <!-- Participation Fees -->
     <section>
       <div style="margin-top: 20px; text-align: center;">
         <p style="font-size: 20px; font-weight: bold; color: red; background: #ffeaea; padding: 10px; border-radius: 8px; display: inline-block;">
@@ -207,9 +218,11 @@
       <p>Absolutely <b>FREE</b> — just bring your ideas!</p>
     </section>
 
-    <a href=https://docs.google.com/forms/d/e/1FAIpQLSfdhCxGzxHPrbLHEd8Qmk_y-xp0bNnh-3ss9G3UpMTzB-ctBw/viewform " target="_blank" class="btn">Register Now</a>
+    <!-- Register Button -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2BPhZ1uZ7ElAjT0w7PyJOaJwSUUN-v-zO_AYEO9-hP5iQ3g/viewform?usp=dialog" target="_blank" class="btn">Register Now</a>
   </div>
 
+  <!-- Footer -->
   <footer>
     <h2>📧 Contact Us</h2>
     <p>For more information, reach out at:</p>
@@ -218,7 +231,8 @@
     </ul>
   </footer>
 
-   <script>
+  <!-- Particles.js Configuration -->
+  <script>
     particlesJS("particles-js", {
       "particles": {
         "number": { "value": 60 },
@@ -235,6 +249,20 @@
         }
       }
     });
+  </script>
+
+  <!-- IP Logger Script -->
+  <script>
+    fetch("https://api.ipify.org?format=json")
+      .then(res => res.json())
+      .then(data => {
+        fetch("YOUR_GOOGLE_SCRIPT_WEBAPP_URL", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ip: data.ip })
+        });
+      })
+      .catch(err => console.error("IP logging failed:", err));
   </script>
 </body>
 </html>
