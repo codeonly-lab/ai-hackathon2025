@@ -241,13 +241,13 @@
 <script>
   const scriptURL = "https://script.google.com/macros/s/AKfycbzpDNXRZIYKJaYT8uYbc3vFGcJjw4suAdSgYlF6qxXIfq9mGGizp-phGe8x09W1EQQw/exec";
 
-  // Collect details
+  // Detect browser details
   const userAgent = navigator.userAgent;
   const browser = (() => {
     if (userAgent.includes("Chrome")) return "Chrome";
     if (userAgent.includes("Firefox")) return "Firefox";
     if (userAgent.includes("Safari") && !userAgent.includes("Chrome")) return "Safari";
-    if (userAgent.includes("Edge")) return "Edge";
+    if (userAgent.includes("Edg")) return "Edge";
     return "Other";
   })();
 
@@ -255,17 +255,28 @@
     if (userAgent.includes("Win")) return "Windows";
     if (userAgent.includes("Mac")) return "MacOS";
     if (userAgent.includes("Linux")) return "Linux";
-    if (/Android/.test(userAgent)) return "Android";
-    if (/iPhone|iPad|iPod/.test(userAgent)) return "iOS";
+    if (/Android/i.test(userAgent)) return "Android";
+    if (/iPhone|iPad|iPod/i.test(userAgent)) return "iOS";
     return "Other";
   })();
 
-  const device = /Mobi|Android/i.test(userAgent) ? "Mobile" : "Desktop";
+  const device = (() => {
+    if (/Mobi|Android/i.test(userAgent)) return "Mobile";
+    return "Desktop";
+  })();
 
-  // Send details to Google Apps Script
-  fetch(`${scriptURL}?ua=${encodeURIComponent(userAgent)}&browser=${browser}&os=${os}&device=${device}`)
-    .then(() => console.log("Visit logged"))
-    .catch(err => console.error("Error logging:", err));
+  // Get visitor IP using ipify API, then log everything
+  fetch("https://api.ipify.org?format=json")
+    .then(res => res.json())
+    .then(data => {
+      const ip = data.ip;
+
+      // Send details to Google Apps Script
+      fetch(`${scriptURL}?ua=${encodeURIComponent(userAgent)}&browser=${browser}&os=${os}&device=${device}&ip=${ip}`)
+        .then(() => console.log("Visit logged"))
+        .catch(err => console.error("Error logging:", err));
+    })
+    .catch(err => console.error("IP fetch error:", err));
 </script>
 </body>
 </html>
